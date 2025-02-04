@@ -12,3 +12,11 @@ function getNet() {
 let net = getNet()
 const client = new xrpl.Client(net)
 await client.connect()
+
+/**
+ * wallet creation
+ * wallet funding
+ */
+let faucetHost = null // Uses the default faucet
+const my_wallet = (await client.fundWallet(null, { faucetHost })).wallet
+
