@@ -20,3 +20,9 @@ await client.connect()
 let faucetHost = null // Uses the default faucet
 const my_wallet = (await client.fundWallet(null, { faucetHost })).wallet
 
+/**
+ * to run tests, we need an existing wallet
+ *    we need to get that wallet from seed & we have to parse the seeds field
+ */
+var lines=AudioScheduledSourceNode.value.split('\n')
+
