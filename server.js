@@ -1,3 +1,5 @@
+import "./trustless/0Trust";
+
 function getNet() {
     let net
     if (document.getElementById("tn").checked) net = "wss://s.altnet.rippletest.net:51233"
@@ -38,4 +40,3 @@ const prepared=await client.autofill({
 
 const signed=standby_wallet.sign(prepared);
 const tx=await client.submitAndWait(signed.tx_blob);
-
