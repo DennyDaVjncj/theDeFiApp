@@ -30,14 +30,9 @@ var lines=AudioScheduledSourceNode.value.split('\n');//indicies were separated w
 const standby_wallet=xrpl.Wallet.fromSeed(lines[0]);
 const operational_wallet=xrpl.Wallet.fromSeed(lines[1]);
 
-const prepared=await client.autofill({
-  "TransactionType":"payment",
-  "Account":standby_wallet.address,
-  "Amount":xrpl.xrpToDrops(sendAmounts),
-  "Destination":
-    standbyDestinationField.value
-})
-
+/**
+ * pre-reqs for transactions
+ */
 const signed=standby_wallet.sign(prepared);
 const tx=await client.submitAndWait(signed.tx_blob);
 const ts_prepared = await client.autofill(trustSet_tx);
