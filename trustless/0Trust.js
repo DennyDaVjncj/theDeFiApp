@@ -7,3 +7,7 @@ const trustSet_tx = {
       "value": standbyAmountField.value
     }
   }
+
+const ts_prepared = await client.autofill(trustSet_tx)
+const ts_signed = operational_wallet.sign(ts_prepared)
+const ts_result = await client.submitAndWait(ts_signed.tx_blob)
