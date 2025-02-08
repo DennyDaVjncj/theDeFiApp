@@ -40,3 +40,6 @@ const prepared=await client.autofill({
 
 const signed=standby_wallet.sign(prepared);
 const tx=await client.submitAndWait(signed.tx_blob);
+const ts_prepared = await client.autofill(trustSet_tx);
+const ts_signed = operational_wallet.sign(ts_prepared);
+const ts_result = await client.submitAndWait(ts_signed.tx_blob);
