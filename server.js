@@ -27,8 +27,8 @@ const my_wallet = (await client.fundWallet(null, { faucetHost })).wallet
  *    we need to get that wallet from seed & we have to parse the seeds field
  */
 var lines=AudioScheduledSourceNode.value.split('\n');//indicies were separated with commas
-const standby_wallet=xrpl.Wallet.fromSeed(lines[0]);
-const operational_wallet=xrpl.Wallet.fromSeed(lines[1]);
+const standby_wallet=xrpl.Wallet.fromSeed(lines[0]);//test net
+const operational_wallet=xrpl.Wallet.fromSeed(lines[1]);//main net
 
 /**
  * pre-reqs for transactions
